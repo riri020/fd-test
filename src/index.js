@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Root from './containers/Root';
+import configureStore from './store';
+
+const store = configureStore();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <>
+      <CssBaseline />
+      <Root store={store} comp={App} />
+  </>,
   document.getElementById('root')
 );
 
